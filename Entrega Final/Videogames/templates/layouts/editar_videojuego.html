@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Editar Videojuego
+{% endblock title %}
+
+{% block content %}
+
+<div class="content">
+    <div class="box">
+      <h2>Editar videojuego</h2>
+        
+        <form action ={% url 'editar_videojuego' object.id %} method = "POST" enctype="multipart/form-data">{% csrf_token %}
+            {{form.as_p}}
+            {{form.media}}
+            <input type="submit" value="Editar">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
